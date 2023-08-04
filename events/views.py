@@ -151,7 +151,7 @@ class EventUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         post = self.get_object()
-        return post.author == self.request.user
+        return post.organizer == self.request.user
 
 
 class EventDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -161,7 +161,7 @@ class EventDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         post = self.get_object()
-        return post.author == self.request.user
+        return post.organizer == self.request.user
 
 #FAVORITE MODEL VIEWS 
 
